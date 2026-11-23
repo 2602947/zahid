@@ -1,0 +1,1090 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Air University — Think Beyond</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+:root {
+  --navy: #10243b;
+  --blue: #2463a5;
+  --ink: #17212c;
+  --muted: #777f88;
+  --paper: #f7f8fa;
+  --line: #e6e9ed;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  background: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+/* NAVIGATION */
+
+.navbar {
+  height: 76px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: var(--navy);
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.brand-name {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -.5px;
+}
+
+.brand-name span {
+  display: block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 13px;
+  color: #555e69;
+}
+
+.nav-links a {
+  transition: color .25s;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+.nav-cta {
+  padding: 12px 20px;
+  background: var(--navy);
+  color: white;
+  border-radius: 30px;
+  font-size: 12px;
+  transition: .3s;
+}
+
+.nav-cta:hover {
+  background: var(--blue);
+  transform: translateY(-2px);
+}
+
+/* MOBILE MENU */
+
+.menu-check {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 650px;
+  padding: 90px 7% 75px;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  align-items: center;
+  gap: 55px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 5% 15%, #edf4fb 0, transparent 35%),
+    white;
+}
+
+.hero-content {
+  max-width: 570px;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(50px, 6vw, 82px);
+  line-height: 1.04;
+  letter-spacing: -5px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.hero h1 em {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: var(--blue);
+}
+
+.hero-description {
+  max-width: 430px;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 15px;
+  margin: 28px 0 35px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.primary-btn {
+  padding: 15px 24px;
+  color: white;
+  background: var(--navy);
+  border-radius: 30px;
+  font-size: 13px;
+  display: inline-block;
+  transition: .3s;
+}
+
+.primary-btn:hover {
+  background: var(--blue);
+  transform: translateY(-3px);
+}
+
+.text-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  border-bottom: 1px solid #aab6c3;
+  padding-bottom: 5px;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 475px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 30px 80px rgba(16,36,59,.13);
+  transition: transform .6s;
+}
+
+.hero-visual:hover .hero-image {
+  transform: scale(1.015);
+}
+
+.image-label {
+  position: absolute;
+  bottom: -22px;
+  left: -25px;
+  background: white;
+  padding: 20px 25px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.08);
+  border-radius: 5px;
+}
+
+.image-label strong {
+  display: block;
+  color: var(--navy);
+  font-size: 14px;
+}
+
+.image-label span {
+  font-size: 11px;
+  color: var(--muted);
+  display: block;
+  margin-top: 5px;
+}
+
+/* INTRO STRIP */
+
+.intro-strip {
+  padding: 28px 7%;
+  background: var(--navy);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.intro-strip p {
+  font-size: 14px;
+  color: #d5dfeb;
+}
+
+.intro-strip a {
+  font-size: 12px;
+  border-bottom: 1px solid #8fa7c0;
+  padding-bottom: 5px;
+  white-space: nowrap;
+}
+
+/* STATS */
+
+.stats {
+  padding: 75px 7%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.stat {
+  padding: 10px 25px;
+  border-right: 1px solid var(--line);
+}
+
+.stat:first-child {
+  padding-left: 0;
+}
+
+.stat:last-child {
+  border: none;
+}
+
+.stat h2 {
+  color: var(--navy);
+  font-size: 37px;
+  letter-spacing: -2px;
+}
+
+.stat p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* SECTION COMMON */
+
+.section {
+  padding: 110px 7%;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 55px;
+  gap: 30px;
+}
+
+.section-heading h2 {
+  font-size: clamp(35px, 4vw, 52px);
+  color: var(--navy);
+  letter-spacing: -2px;
+  line-height: 1.15;
+}
+
+.section-heading p {
+  color: var(--muted);
+  max-width: 350px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.section-number {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--blue);
+  margin-bottom: 15px;
+  display: block;
+  font-weight: 700;
+}
+
+/* ACADEMIC AREAS */
+
+.academics {
+  background: var(--paper);
+}
+
+.academic-list {
+  border-top: 1px solid #dfe3e8;
+}
+
+.academic-item {
+  border-bottom: 1px solid #dfe3e8;
+}
+
+.academic-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 26px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.academic-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.academic-item summary h3 {
+  font-size: clamp(17px, 2vw, 24px);
+  font-weight: 500;
+  color: var(--navy);
+  transition: .25s;
+}
+
+.academic-item summary:hover h3 {
+  color: var(--blue);
+  padding-left: 8px;
+}
+
+.academic-item summary span {
+  font-size: 23px;
+  color: var(--blue);
+  transition: transform .3s;
+}
+
+.academic-item[open] summary span {
+  transform: rotate(45deg);
+}
+
+.academic-details {
+  padding: 0 5px 28px;
+  max-width: 700px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 13px;
+}
+
+.academic-details a {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/* CAMPUS STORY */
+
+.campus {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.campus-photo {
+  width: 100%;
+  height: 470px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.campus-copy h2 {
+  font-size: clamp(38px, 4vw, 55px);
+  letter-spacing: -2px;
+  line-height: 1.15;
+  color: var(--navy);
+  margin-bottom: 25px;
+}
+
+.campus-copy p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 22px;
+}
+
+.campus-note {
+  border-left: 2px solid var(--blue);
+  padding: 12px 18px;
+  color: var(--navy);
+  font-size: 13px;
+  margin: 30px 0;
+  background: #f7f9fc;
+}
+
+/* GALLERY */
+
+.gallery {
+  background: var(--paper);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  grid-template-rows: 230px 230px;
+  gap: 18px;
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.gallery-card:first-child {
+  grid-row: span 2;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 35px 22px 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(transparent, rgba(0,0,0,.65));
+}
+
+/* ADMISSIONS */
+
+.admissions {
+  background: var(--navy);
+  color: white;
+  padding: 100px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.admissions h2 {
+  font-size: clamp(38px, 5vw, 60px);
+  letter-spacing: -3px;
+  line-height: 1.1;
+  max-width: 600px;
+}
+
+.admissions p {
+  color: #bdc9d7;
+  font-size: 14px;
+  margin-top: 20px;
+  line-height: 1.8;
+}
+
+.admission-btn {
+  padding: 16px 25px;
+  color: var(--navy);
+  background: white;
+  border-radius: 30px;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: .3s;
+}
+
+.admission-btn:hover {
+  background: #dce9f7;
+  transform: translateY(-3px);
+}
+
+/* FOOTER */
+
+footer {
+  padding: 65px 7% 25px;
+  background: #0b1a2b;
+  color: white;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding-bottom: 55px;
+}
+
+.footer-brand h2 {
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  color: #aab8c8;
+  max-width: 300px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.footer-links {
+  display: flex;
+  gap: 70px;
+}
+
+.footer-column h4 {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-column a {
+  display: block;
+  color: #aab8c8;
+  font-size: 12px;
+  margin-bottom: 13px;
+  transition: .2s;
+}
+
+.footer-column a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid #26394e;
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #8495a8;
+  font-size: 11px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 65px;
+  }
+
+  .hero-content {
+    max-width: 650px;
+  }
+
+  .hero-image {
+    height: 400px;
+  }
+
+  .campus {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .campus-photo {
+    height: 400px;
+  }
+
+  .admissions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    gap: 17px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    height: 68px;
+    padding: 0 5%;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: white;
+    padding: 15px 6% 25px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links a {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .menu-check:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-cta {
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .hero {
+    padding: 65px 6% 75px;
+    gap: 40px;
+  }
+
+  .hero h1 {
+    letter-spacing: -3px;
+  }
+
+  .hero-image {
+    height: 310px;
+  }
+
+  .image-label {
+    left: 10px;
+    bottom: -25px;
+  }
+
+  .intro-strip {
+    padding: 25px 6%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stats {
+    padding: 45px 6%;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 35px;
+  }
+
+  .stat {
+    padding: 5px 15px;
+  }
+
+  .stat:nth-child(2) {
+    border: none;
+  }
+
+  .section {
+    padding: 75px 6%;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading p {
+    margin-top: 18px;
+  }
+
+  .campus-photo {
+    height: 310px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 280px 220px 220px;
+  }
+
+  .gallery-card:first-child {
+    grid-row: auto;
+  }
+
+  .footer-top,
+  .footer-links {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+
+  <a href="#home" class="brand">
+    <div class="brand-mark">A</div>
+    <div class="brand-name">
+      AIR UNIVERSITY
+      <span>ISLAMABAD · PAKISTAN</span>
+    </div>
+  </a>
+
+  <input type="checkbox" id="menu" class="menu-check">
+  <label for="menu" class="menu-icon">☰</label>
+
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#academics">Academics</a>
+    <a href="#campus">Campus</a>
+    <a href="#gallery">Gallery</a>
+    <a href="https://portals.au.edu.pk/admissions/" class="nav-cta">
+      Apply Now ↗
+    </a>
+  </nav>
+
+</header>
+
+<!-- HERO -->
+<main>
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+    <div class="eyebrow">A different kind of university</div>
+
+    <h1>
+      Think beyond.<br>
+      Build your <em>future.</em>
+    </h1>
+
+    <p class="hero-description">
+      Discover a place where curiosity meets innovation.
+      Explore opportunities in technology, engineering,
+      science, management and beyond.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#academics" class="primary-btn">Explore academics ↗</a>
+      <a href="#about" class="text-link">Discover Air University</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <img
+      class="hero-image"
+      src="https://upload.wikimedia.org/wikipedia/commons/0/04/Air_University_Main_Campus%2C_Islamabad.jpg"
+      alt="Air University main campus entrance in Islamabad">
+
+    <div class="image-label">
+      <strong>Islamabad Main Campus</strong>
+      <span>Sector E-9 · Islamabad</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- INTRO -->
+<div class="intro-strip">
+  <p>Federally chartered public sector university · Established 2002</p>
+  <a href="https://www.au.edu.pk/">Visit official website ↗</a>
+</div>
+
+<!-- STATISTICS -->
+<section class="stats">
+  <div class="stat">
+    <h2>7+</h2>
+    <p>Campuses</p>
+  </div>
+
+  <div class="stat">
+    <h2>89+</h2>
+    <p>Degree programmes</p>
+  </div>
+
+  <div class="stat">
+    <h2>530+</h2>
+    <p>Faculty members</p>
+  </div>
+
+  <div class="stat">
+    <h2>14,500+</h2>
+    <p>Enrolled students</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section campus" id="about">
+
+  <img
+    class="campus-photo"
+    src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Air_neXU%2C_Air_University%2C_Islamabad.jpg"
+    alt="Air neXU building at Air University">
+
+  <div class="campus-copy">
+    <span class="section-number">01 — OUR UNIVERSITY</span>
+
+    <h2>More than a place to study.</h2>
+
+    <p>
+      Air University is a federally chartered public sector
+      university established in 2002. Its main campus is
+      situated in Sector E-9, Islamabad, near the Margalla
+      foothills.
+    </p>
+
+    <p>
+      The university focuses on teaching, research,
+      innovation and developing graduates with professional
+      knowledge and a sense of responsibility.
+    </p>
+
+    <div class="campus-note">
+      Established in 2002 · Main Campus, E-9 Islamabad
+    </div>
+
+    <a href="https://www.au.edu.pk/" class="text-link">
+      Learn more about AU ↗
+    </a>
+  </div>
+
+</section>
+
+<!-- ACADEMICS -->
+<section class="section academics" id="academics">
+
+  <div class="section-heading">
+    <div>
+      <span class="section-number">02 — WHAT YOU CAN EXPLORE</span>
+      <h2>Find your field.<br>Shape your future.</h2>
+    </div>
+
+    <p>
+      Explore the academic areas offered across Air University's
+      faculties and institutes.
+    </p>
+  </div>
+
+  <div class="academic-list">
+
+    <details class="academic-item">
+      <summary>
+        <h3>Computing & Artificial Intelligence</h3>
+        <span>+</span>
+      </summary>
+      <div class="academic-details">
+        Explore computing, software, data and artificial
+        intelligence-related academic opportunities.
+        <br>
+        <a href="https://www.au.edu.pk/">Explore official programmes ↗</a>
+      </div>
+    </details>
+
+    <details class="academic-item">
+      <summary>
+        <h3>Faculty of Engineering</h3>
+        <span>+</span>
+      </summary>
+      <div class="academic-details">
+        Discover engineering education, research and
+        technical disciplines.
+        <br>
+        <a href="https://www.au.edu.pk/">Explore official programmes ↗</a>
+      </div>
+    </details>
+
+    <details class="academic-item">
+      <summary>
+        <h3>Basic & Applied Sciences</h3>
+        <span>+</span>
+      </summary>
+      <div class="academic-details">
+        Explore scientific learning, mathematics,
+        research and applied sciences.
+        <br>
+        <a href="https://www.au.edu.pk/">Explore official programmes ↗</a>
+      </div>
+    </details>
+
+    <details class="academic-item">
+      <summary>
+        <h3>Management Sciences</h3>
+        <span>+</span>
+      </summary>
+      <div class="academic-details">
+        Discover business, management and related
+        academic disciplines.
+        <br>
+        <a href="https://www.au.edu.pk/">Explore official programmes ↗</a>
+      </div>
+    </details>
+
+    <details class="academic-item">
+      <summary>
+        <h3>Social Sciences</h3>
+        <span>+</span>
+      </summary>
+      <div class="academic-details">
+        Explore education, humanities, psychology
+        and other social science disciplines.
+        <br>
+        <a href="https://www.au.edu.pk/">Explore official programmes ↗</a>
+      </div>
+    </details>
+
+    <details class="academic-item">
+      <summary>
+        <h3>Avionics & Aeronautics</h3>
+        <span>+</span>
+      </summary>
+      <div class="academic-details">
+        Discover academic opportunities connected
+        with aviation and aerospace.
+        <br>
+        <a href="https://www.au.edu.pk/">Explore official programmes ↗</a>
+      </div>
+    </details>
+
+  </div>
+
+</section>
+
+<!-- CAMPUS GALLERY -->
+<section class="section gallery" id="gallery">
+
+  <div class="section-heading">
+    <div>
+      <span class="section-number">03 — CAMPUS LIFE</span>
+      <h2>A closer look<br>at Air University.</h2>
+    </div>
+
+    <p>
+      A glimpse of the architecture and spaces
+      of the Islamabad campus.
+    </p>
+  </div>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-card">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/0/04/Air_University_Main_Campus%2C_Islamabad.jpg"
+        alt="Main campus entrance">
+      <div class="gallery-caption">Main Campus Entrance</div>
+    </div>
+
+    <div class="gallery-card">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Air_neXU%2C_Air_University%2C_Islamabad.jpg"
+        alt="Air neXU building">
+      <div class="gallery-caption">Air neXU</div>
+    </div>
+
+    <div class="gallery-card">
+      <img
+        src="https://wisermap.com/business/photos/hvvonLHjKwTaTlPypwVSVMLaOSeougdWGCU0LQ8p.webp"
+        alt="Air University administration block">
+      <div class="gallery-caption">Administration Block</div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ADMISSIONS -->
+<section class="admissions">
+  <div>
+    <span class="section-number" style="color:#9bc8f5">
+      04 — YOUR NEXT CHAPTER
+    </span>
+
+    <h2>Your future<br>starts with a decision.</h2>
+
+    <p>
+      Explore admission information, eligibility criteria
+      and available programmes through the official portal.
+    </p>
+  </div>
+
+  <a
+    href="https://portals.au.edu.pk/admissions/"
+    class="admission-btn">
+    Explore Admissions ↗
+  </a>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="footer-top">
+
+    <div class="footer-brand">
+      <h2>AIR UNIVERSITY.</h2>
+      <p>
+        A federally chartered public sector university
+        committed to education, research and innovation.
+      </p>
+    </div>
+
+    <div class="footer-links">
+
+      <div class="footer-column">
+        <h4>Explore</h4>
+        <a href="#about">About AU</a>
+        <a href="#academics">Academics</a>
+        <a href="#campus">Campus</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Quick links</h4>
+        <a href="https://www.au.edu.pk/">Official Website</a>
+        <a href="https://portals.au.edu.pk/admissions/">Admissions</a>
+        <a href="https://www.au.edu.pk/">Contact</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Air University — Student design concept</span>
+    <span>Designed with simplicity.</span>
+  </div>
+
+</footer>
+
+</body>
+</html>
